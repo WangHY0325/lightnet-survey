@@ -1,0 +1,22 @@
+# 数据集路径 - 请确认这与您的实际路径一致
+data_root: "/gpool/home/wanghongyang/WangHY/LRPRNet/LRPR-MobileNetV2/data/imagewoof2-160"
+
+# 训练参数
+epochs: 250
+batch_size: 64
+learning_rate: 0.05
+lr_scheduler: "cosine"
+weight_decay: 0.00004
+
+#模型选择"lrprnet"或者"mobilenetv2"
+
+model: "mobilenetv2"
+model_config:
+  num_classes: 10  # imagewoof有10个类别
+  width_mult: 1.0  # 网络宽度乘子
+  rank_ratio: 0.125  # LRPR模块的低秩比率 r=channels/8
+
+# 实验记录
+experiment_name: "mobilenetv2_imagewoof"
+log_dir: "/gpool/home/wanghongyang/WangHY/LRPRNet/LRPR-MobileNetV2/logs/mobilenetv2"
+checkpoint_dir: '/gpool/home/wanghongyang/WangHY/LRPRNet/LRPR-MobileNetV2/checkpoints/mobilenetv2'
